@@ -1,0 +1,33 @@
+<div class="table-container">
+    <h2>Attack Table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Type of Attack</th>
+          <th>Agent</th>
+          <th>Sub Agent</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entry of attackEntries; let i = index">
+          <td>{{ entry.type }}</td>
+          <td>{{ entry.agent }}</td>
+          <td>{{ entry.subAgent }}</td>
+          <td>
+            <button (click)="deleteEntry(i)">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td><input [(ngModel)]="newEntry.type" placeholder="Type of Attack"></td>
+          <td><input [(ngModel)]="newEntry.agent" placeholder="Agent"></td>
+          <td><input [(ngModel)]="newEntry.subAgent" placeholder="Sub Agent"></td>
+          <td>
+            <button (click)="addEntry()">Add</button>
+            <button (click)="cancelEntry()">Cancel</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
